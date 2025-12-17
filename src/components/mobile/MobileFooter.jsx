@@ -28,7 +28,6 @@ function MobileFooter() {
             <div className="flex flex-col gap-3 items-center">
               <h4 className="text-lg font-semibold uppercase tracking-wider text-gray-400">AREA OF SERVICE</h4>
               <a href="https://maps.google.com/maps?q=4607+N+Humboldt+Ave%2C+Minneapolis%2C+MN%2C+United+States(Summit+Diesel)&sll=45.03902,-93.29912" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-wine-red transition-colors text-lg justify-center">
-                <span>📍</span>
                 4685 N Humboldt Ave N Minneapolis, MN 55412
               </a>
             </div>
@@ -36,7 +35,6 @@ function MobileFooter() {
             <div className="flex flex-col gap-3 items-center">
               <h4 className="text-lg font-semibold uppercase tracking-wider text-gray-400">PHONE</h4>
               <a href="tel:763-777-2135" className="flex items-center gap-2 text-white hover:text-wine-red transition-colors text-lg justify-center">
-                <span>📞</span>
                 763-777-2135
               </a>
             </div>
@@ -44,7 +42,6 @@ function MobileFooter() {
             <div className="flex flex-col gap-3 items-center">
               <h4 className="text-lg font-semibold uppercase tracking-wider text-gray-400">EMAIL</h4>
               <a href="mailto:service@summitdieselmn.com" className="flex items-center gap-2 text-white hover:text-wine-red transition-colors text-lg justify-center">
-                <span>✉️</span>
                 service@summitdieselmn.com
               </a>
             </div>

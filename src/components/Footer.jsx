@@ -12,14 +12,14 @@ function Footer() {
               </Link>
             </div>
             <div className="flex gap-4">
-              <a href="https://facebook.com/@summitdieselmn" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-wine-red transition-colors">
-                <span className="font-bold text-lg">f</span>
+              <a href="https://facebook.com/@summitdieselmn" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-wine-red transition-colors" style={{textAlign: 'center', verticalAlign: 'middle'}}>
+                <span className="font-bold text-lg w-full h-full" style={{verticalAlign: 'middle', lineHeight: '35px'}}>f</span>
               </a>
-              <a href="https://plus.google.com" aria-label="Google Plus" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-wine-red transition-colors">
-                <span className="font-bold text-lg">g+</span>
+              <a href="https://plus.google.com" aria-label="Google Plus" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-wine-red transition-colors" style={{textAlign: 'center', verticalAlign: 'middle'}}>
+                <span className="font-bold text-lg w-full h-full" style={{verticalAlign: 'middle', lineHeight: '35px'}}>g+</span>
               </a>
-              <a href="https://twitter.com/" aria-label="Twitter" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-wine-red transition-colors">
-                <span className="font-bold text-lg">t</span>
+              <a href="https://twitter.com/" aria-label="Twitter" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-wine-red transition-colors" style={{textAlign: 'center', verticalAlign: 'middle'}}>
+                <span className="font-bold text-lg w-full h-full" style={{verticalAlign: 'middle', lineHeight: '35px'}}>t</span>
               </a>
             </div>
           </div>
@@ -28,7 +28,6 @@ function Footer() {
             <div className="flex flex-col gap-3">
               <h4 className="text-base sm:text-sm font-semibold uppercase tracking-wider text-gray-400">AREA OF SERVICE</h4>
               <a href="https://maps.google.com/maps?q=4607+N+Humboldt+Ave%2C+Minneapolis%2C+MN%2C+United+States(Summit+Diesel)&sll=45.03902,-93.29912" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-wine-red transition-colors text-base sm:text-sm">
-                <span>📍</span>
                 4685 N Humboldt Ave N Minneapolis, MN 55412
               </a>
             </div>
@@ -36,7 +35,6 @@ function Footer() {
             <div className="flex flex-col gap-3">
               <h4 className="text-base sm:text-sm font-semibold uppercase tracking-wider text-gray-400">PHONE</h4>
               <a href="tel:763-777-2135" className="flex items-center gap-2 text-white hover:text-wine-red transition-colors text-base sm:text-sm">
-                <span>📞</span>
                 763-777-2135
               </a>
             </div>
@@ -44,7 +42,6 @@ function Footer() {
             <div className="flex flex-col gap-3">
               <h4 className="text-base sm:text-sm font-semibold uppercase tracking-wider text-gray-400">EMAIL</h4>
               <a href="mailto:service@summitdieselmn.com" className="flex items-center gap-2 text-white hover:text-wine-red transition-colors text-base sm:text-sm">
-                <span>✉️</span>
                 service@summitdieselmn.com
               </a>
             </div>

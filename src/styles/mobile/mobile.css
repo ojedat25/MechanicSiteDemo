@@ -31,3 +31,12 @@
   }
 }
 
+/* Mobile-specific background image adjustments */
+@media (max-width: 640px) {
+  .hero-background-image {
+    background-size: auto 53%;
+    background-position: calc(100% + 90px) 60%;
+    opacity: 0.5;
+  }
+}
+

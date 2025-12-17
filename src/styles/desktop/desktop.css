@@ -1,0 +1,10 @@
+/* Desktop/base styles */
+
+/* Background image styling */
+.hero-background-image {
+  background-image: url(/mainvan.png);
+  background-repeat: no-repeat;
+  background-size: auto 85%;
+  background-position: calc(100% + 50px) 40%;
+}
+

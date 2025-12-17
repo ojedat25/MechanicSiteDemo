@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import MobileService from './pages/MobileService'
 import TrailerRepair from './pages/TrailerRepair'
 import ServiceCall from './pages/ServiceCall'
+import './styles/desktop/desktop.css'
 import './styles/mobile/mobile.css'
 
 function App() {
