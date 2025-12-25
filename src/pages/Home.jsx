@@ -1,11 +1,22 @@
 import { useState } from 'react'
 
+const US_STATES = [
+  'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
+  'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD',
+  'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ',
+  'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
+  'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+]
+
 function Home() {
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
     dob: '',
-    address: ''
+    streetAddress: '',
+    city: '',
+    state: '',
+    zipCode: ''
   })
   
   const [resumeFile, setResumeFile] = useState(null)
@@ -67,7 +78,10 @@ function Home() {
       formDataToSend.append('fullName', formData.fullName)
       formDataToSend.append('phone', formData.phone)
       formDataToSend.append('dob', formData.dob)
-      formDataToSend.append('address', formData.address)
+      formDataToSend.append('streetAddress', formData.streetAddress)
+      formDataToSend.append('city', formData.city)
+      formDataToSend.append('state', formData.state)
+      formDataToSend.append('zipCode', formData.zipCode)
       formDataToSend.append('resume', resumeFile)
 
       const response = await fetch('/email/', {
@@ -85,7 +99,10 @@ function Home() {
         fullName: '',
         phone: '',
         dob: '',
-        address: ''
+        streetAddress: '',
+        city: '',
+        state: '',
+        zipCode: ''
       })
       setResumeFile(null)
       
@@ -206,17 +223,73 @@ function Home() {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="address" className="font-semibold mb-2 text-gray-800">Address *</label>
-                <textarea 
-                  id="address" 
-                  name="address" 
-                  rows="3" 
-                  value={formData.address}
-                  onChange={handleChange}
-                  required
-                  className="px-4 py-3 border-2 border-gray-300 rounded-lg text-base focus:outline-none focus:border-wine-red focus:ring-2 focus:ring-wine-red/20 transition-all resize-y min-h-[100px]"
-                  placeholder="Street address, City, State, ZIP"
-                ></textarea>
+                <label className="font-semibold mb-2 text-gray-800">Address *</label>
+                <div className="flex flex-col gap-4">
+                  <div className="flex flex-col">
+                    <label htmlFor="streetAddress" className="text-sm text-gray-600 mb-1">Street Address</label>
+                    <input 
+                      type="text" 
+                      id="streetAddress" 
+                      name="streetAddress" 
+                      value={formData.streetAddress}
+                      onChange={handleChange}
+                      required
+                      className="px-4 py-3 border-2 border-gray-300 rounded-lg text-base focus:outline-none focus:border-wine-red focus:ring-2 focus:ring-wine-red/20 transition-all"
+                      placeholder="123 Main Street"
+                    />
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="flex flex-col">
+                      <label htmlFor="city" className="text-sm text-gray-600 mb-1">City</label>
+                      <input 
+                        type="text" 
+                        id="city" 
+                        name="city" 
+                        value={formData.city}
+                        onChange={handleChange}
+                        required
+                        className="px-4 py-3 border-2 border-gray-300 rounded-lg text-base focus:outline-none focus:border-wine-red focus:ring-2 focus:ring-wine-red/20 transition-all"
+                        placeholder="Minneapolis"
+                      />
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="flex flex-col">
+                        <label htmlFor="state" className="text-sm text-gray-600 mb-1">State</label>
+                        <select 
+                          id="state" 
+                          name="state" 
+                          value={formData.state}
+                          onChange={handleChange}
+                          required
+                          className="px-4 py-3 border-2 border-gray-300 rounded-lg text-base focus:outline-none focus:border-wine-red focus:ring-2 focus:ring-wine-red/20 transition-all bg-white"
+                        >
+                          <option value="">Select</option>
+                          {US_STATES.map(state => (
+                            <option key={state} value={state}>{state}</option>
+                          ))}
+                        </select>
+                      </div>
+                      
+                      <div className="flex flex-col">
+                        <label htmlFor="zipCode" className="text-sm text-gray-600 mb-1">ZIP Code</label>
+                        <input 
+                          type="text" 
+                          id="zipCode" 
+                          name="zipCode" 
+                          value={formData.zipCode}
+                          onChange={handleChange}
+                          required
+                          className="px-4 py-3 border-2 border-gray-300 rounded-lg text-base focus:outline-none focus:border-wine-red focus:ring-2 focus:ring-wine-red/20 transition-all"
+                          placeholder="55412"
+                          pattern="[0-9]{5}(-[0-9]{4})?"
+                          maxLength="10"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="flex flex-col">
