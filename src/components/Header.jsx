@@ -15,12 +15,6 @@ function Header() {
             <nav className="flex-1 flex justify-center min-w-0">
               <ul className="flex items-center gap-2 flex-wrap justify-center">
                 <li className="flex items-center">
-                  <Link to="/" className="px-4 py-2 text-white font-semibold hover:text-wine-red transition-colors">
-                    Home
-                  </Link>
-                  <span className="text-gray-500 mx-1">|</span>
-                </li>
-                <li className="flex items-center">
                   <Link to="/request-24/7-emergency-service---towing" className="px-4 py-2 text-white font-semibold hover:text-wine-red transition-colors">
                     Mobile Service
                   </Link>

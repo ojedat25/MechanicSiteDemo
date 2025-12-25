@@ -40,3 +40,43 @@
   }
 }
 
+/* Mobile-specific hiring form styles */
+@media (max-width: 768px) {
+  /* File input styling for mobile */
+  input[type="file"] {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  input[type="file"]::file-selector-button {
+    padding: 10px 16px;
+    font-size: 14px;
+    margin-right: 12px;
+  }
+
+  /* Form container padding adjustments */
+  .hiring-form-container {
+    padding: 1.5rem;
+  }
+
+  /* Address textarea mobile optimization */
+  textarea#address {
+    font-size: 16px;
+    min-height: 120px;
+  }
+
+  /* Date input mobile styling */
+  input[type="date"] {
+    font-size: 16px;
+  }
+
+  /* Success/Error messages mobile styling */
+  #success-message,
+  #error-message {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
+
