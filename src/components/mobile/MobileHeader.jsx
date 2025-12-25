@@ -40,15 +40,6 @@ function MobileHeader() {
             <ul className="flex flex-col gap-2 py-4">
               <li>
                 <Link 
-                  to="/" 
-                  className="block px-4 py-3 text-white font-semibold hover:text-wine-red hover:bg-gray-900 transition-colors rounded"
-                  onClick={closeMenu}
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link 
                   to="/request-24/7-emergency-service---towing" 
                   className="block px-4 py-3 text-white font-semibold hover:text-wine-red hover:bg-gray-900 transition-colors rounded"
                   onClick={closeMenu}
