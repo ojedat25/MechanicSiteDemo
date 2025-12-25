@@ -14,7 +14,9 @@ export default defineConfig({
     allowedHosts: [
       'mechanicsitedemo.onrender.com',
       '.onrender.com' // Allow all Render.com subdomains
-    ]
+    ],
+    // Ensure SPA routing works - serve index.html for all routes
+    middlewareMode: false
   }
 })
 
