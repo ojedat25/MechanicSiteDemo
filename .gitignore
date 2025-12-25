@@ -1,25 +1,110 @@
-# Logs
-logs
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Django
 *.log
+*.pot
+*.pyc
+db.sqlite3
+db.sqlite3-journal
+/backend/staticfiles/
+/backend/media/
+/backend/static/
+*.backup
+*.bak
+*.swp
+*.swo
+*~
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+backend/venv/
+backend/env/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+*.code-workspace
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# Node
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+.pnpm-debug.log*
+frontend/node_modules/
 
-node_modules
-dist
-dist-ssr
-*.local
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+frontend/dist/
+frontend/build/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Django migrations (optional - uncomment if you don't want to track migrations)
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# Local settings
+local_settings.py
+settings_local.py
+
+# Backup files
+*.backup
+*.bak
+*.orig
+*.tmp
+
+# OS files
+Thumbs.db
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Desktop.ini
 

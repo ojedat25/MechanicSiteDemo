@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { api } from '../api'
 
 const US_STATES = [
   'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
@@ -74,25 +75,7 @@ function Home() {
     }
 
     try {
-      const formDataToSend = new FormData()
-      formDataToSend.append('fullName', formData.fullName)
-      formDataToSend.append('phone', formData.phone)
-      formDataToSend.append('dob', formData.dob)
-      formDataToSend.append('streetAddress', formData.streetAddress)
-      formDataToSend.append('city', formData.city)
-      formDataToSend.append('state', formData.state)
-      formDataToSend.append('zipCode', formData.zipCode)
-      formDataToSend.append('resume', resumeFile)
-
-      const response = await fetch('/email/', {
-        method: 'POST',
-        body: formDataToSend
-      })
-
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ message: 'Failed to send application' }))
-        throw new Error(errorData.message || `Server error: ${response.status}`)
-      }
+      await api.submitEmailForm('hiring', formData, resumeFile ? { resume: resumeFile } : undefined)
 
       setShowSuccess(true)
       setFormData({
