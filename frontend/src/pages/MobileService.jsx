@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import emailjs from '@emailjs/browser'
-import { EMAILJS_CONFIG } from '../config/emailjs.config'
+import { api } from '../api'
 
 // Vehicle makes and models data
 const vehicleMakes = {
@@ -76,56 +75,9 @@ function MobileService() {
     setShowError(false)
     setErrorMessage('')
 
-    if (EMAILJS_CONFIG.serviceID === 'YOUR_SERVICE_ID' || 
-        EMAILJS_CONFIG.templateID === 'YOUR_TEMPLATE_ID' || 
-        EMAILJS_CONFIG.publicKey === 'YOUR_PUBLIC_KEY') {
-      setShowError(true)
-      setErrorMessage('Email service is not configured. Please contact the administrator.')
-      setIsSubmitting(false)
-      return
-    }
-
-    const templateParams = {
-      to_email: EMAILJS_CONFIG.recipientEmail,
-      from_name: formData.ownerName || formData.companyName || 'Service Request',
-      reply_to: formData.email,
-      subject: `Service Call Request - ${formData.companyName || 'New Request'}`,
-      message: `
-Service Call Request Details:
-
-Date: ${formData.date}
-Company Name: ${formData.companyName}
-US DOT #: ${formData.dotNumber}
-Unit #: ${formData.unitNumber}
-
-Owner Information:
-Owner Name: ${formData.ownerName}
-Owner Phone: ${formData.ownerPhone}
-Email: ${formData.email}
-
-Driver Information:
-Driver Name: ${formData.driverName}
-Driver Phone: ${formData.driverPhone}
-
-Vehicle Information:
-Year: ${formData.year}
-Make: ${formData.make}
-Model: ${formData.model}
-Plate #: ${formData.plateNumber}
-Color: ${formData.color}
-VIN #: ${formData.vin}
-
-Location: ${formData.location}
-
-Description/Details:
-${formData.description}
-      `.trim()
-    }
-
     try {
-      emailjs.init(EMAILJS_CONFIG.publicKey)
-      await emailjs.send(EMAILJS_CONFIG.serviceID, EMAILJS_CONFIG.templateID, templateParams)
-      
+      await api.submitEmailForm('mobile_service', formData)
+
       setShowSuccess(true)
       setFormData({
         date: '',
@@ -151,9 +103,9 @@ ${formData.description}
         document.getElementById('success-message')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
       }, 100)
     } catch (error) {
-      console.error('EmailJS Error:', error)
+      console.error('Submission Error:', error)
       setShowError(true)
-      setErrorMessage(error.text || 'Failed to send message. Please try again later.')
+      setErrorMessage(error.message || 'Failed to send message. Please try again later.')
     } finally {
       setIsSubmitting(false)
     }

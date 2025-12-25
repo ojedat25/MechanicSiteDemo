@@ -24,8 +24,10 @@ class EmailFormView(View):
     def post(self, request):
         """Handle POST request to send email based on form type."""
         try:
-            # Check if request contains files (multipart/form-data)
-            if request.FILES:
+            # Check if request is FormData (multipart/form-data) or JSON
+            # FormData requests are parsed into request.POST by Django
+            if request.POST:
+                # Handle FormData (multipart/form-data)
                 form_data = dict(request.POST)
                 # Convert QueryDict values to single values where appropriate
                 for key, value in form_data.items():
@@ -34,11 +36,11 @@ class EmailFormView(View):
                 
                 # Handle file attachments
                 files = {}
-                for key, file in request.FILES.items():
-                    files[key] = file
+                if request.FILES:
+                    for key, file in request.FILES.items():
+                        files[key] = file
                 
-                form_type_list = form_data.get('formType', [''])
-                form_type = form_type_list[0] if isinstance(form_type_list, list) else form_data.get('formType', '')
+                form_type = form_data.get('formType', '')
             else:
                 # Handle JSON data
                 try:
