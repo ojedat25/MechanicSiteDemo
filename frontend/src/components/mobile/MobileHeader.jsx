@@ -58,7 +58,7 @@ function MobileHeader() {
               </li>
               <li>
                 <Link 
-                  to="/copy-of-services" 
+                  to="/services" 
                   className="block px-4 py-3 text-white font-semibold hover:text-wine-red hover:bg-gray-900 transition-colors rounded"
                   onClick={closeMenu}
                 >

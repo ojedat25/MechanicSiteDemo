@@ -27,7 +27,7 @@ function Header() {
                   <span className="text-gray-500 mx-1">|</span>
                 </li>
                 <li>
-                  <Link to="/copy-of-services" className="px-4 py-2 text-white font-semibold hover:text-wine-red transition-colors">
+                  <Link to="/services" className="px-4 py-2 text-white font-semibold hover:text-wine-red transition-colors">
                     Service Call
                   </Link>
                 </li>

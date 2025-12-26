@@ -31,7 +31,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/request-24/7-emergency-service---towing" element={<MobileService />} />
           <Route path="/trailer-repair" element={<TrailerRepair />} />
-          <Route path="/copy-of-services" element={<ServiceCall />} />
+          <Route path="/services" element={<ServiceCall />} />
         </Routes>
         {isMobile ? <MobileFooter /> : <Footer />}
       </div>

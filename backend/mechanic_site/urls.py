@@ -20,4 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('email/', include('emails.urls')),
+    # SEO endpoints - served by Django for search engine discovery
+    path('', include('seo.urls')),
 ]

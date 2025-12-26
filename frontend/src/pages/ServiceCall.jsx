@@ -1,4 +1,9 @@
+import { Helmet } from 'react-helmet-async'
+
 function ServiceCall() {
+  const baseUrl = 'https://mechanicsitedemo-1.onrender.com'
+  const pageUrl = `${baseUrl}/services`
+  
   const services = [
     { title: 'Full Mechanical', description: 'Summit Diesel Full Mechanical Services' },
     { title: 'Electrical', description: 'Full Electrical Services' },
@@ -30,7 +35,26 @@ function ServiceCall() {
   ]
 
   return (
-    <main className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white min-h-[calc(100vh-200px)]">
+    <>
+      <Helmet>
+        <title>Service Call & Fleet Services | Summit Diesel Repair</title>
+        <meta name="description" content="Comprehensive diesel service call and fleet maintenance services. Full mechanical, electrical, tire services, and more for commercial vehicles." />
+        <link rel="canonical" href={pageUrl} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Service Call & Fleet Services | Summit Diesel Repair" />
+        <meta property="og:description" content="Comprehensive diesel service call and fleet maintenance services. Full mechanical, electrical, tire services, and more." />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${baseUrl}/logo.png`} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Service Call & Fleet Services | Summit Diesel Repair" />
+        <meta name="twitter:description" content="Comprehensive diesel service call and fleet maintenance services for commercial vehicles." />
+        <meta name="twitter:image" content={`${baseUrl}/logo.png`} />
+      </Helmet>
+      <main className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white min-h-[calc(100vh-200px)]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-bold text-black mb-6 uppercase tracking-wider">
@@ -98,6 +122,7 @@ function ServiceCall() {
         </div>
       </div>
     </main>
+    </>
   )
 }
 

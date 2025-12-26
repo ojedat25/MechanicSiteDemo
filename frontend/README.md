@@ -78,7 +78,7 @@ The built files will be in the `dist` directory.
 - **Home** (`/`) - Main landing page with maintenance message
 - **Mobile Service** (`/request-24/7-emergency-service---towing`) - Service request form and emergency services information
 - **Trailer Repair** (`/trailer-repair`) - Comprehensive trailer repair services and FAQs
-- **Service Call** (`/copy-of-services`) - List of all services offered
+- **Service Call** (`/services`) - List of all services offered
 
 ## Email Form Setup (EmailJS)
 

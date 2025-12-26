@@ -1,6 +1,30 @@
+import { Helmet } from 'react-helmet-async'
+
 function TrailerRepair() {
+  const baseUrl = 'https://mechanicsitedemo-1.onrender.com'
+  const pageUrl = `${baseUrl}/trailer-repair`
+  
   return (
-    <main className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white min-h-[calc(100vh-200px)]">
+    <>
+      <Helmet>
+        <title>Trailer Repair Services | Summit Diesel Repair</title>
+        <meta name="description" content="Professional trailer repair and maintenance services. Fast, dependable repairs to keep your trailers on the road. 24/7 support available." />
+        <link rel="canonical" href={pageUrl} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Trailer Repair Services | Summit Diesel Repair" />
+        <meta property="og:description" content="Professional trailer repair and maintenance services. Fast, dependable repairs to keep your trailers on the road." />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${baseUrl}/logo.png`} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Trailer Repair Services | Summit Diesel Repair" />
+        <meta name="twitter:description" content="Professional trailer repair and maintenance services. Fast, dependable repairs for your trailers." />
+        <meta name="twitter:image" content={`${baseUrl}/logo.png`} />
+      </Helmet>
+      <main className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white min-h-[calc(100vh-200px)]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-bold text-black mb-6 uppercase tracking-wider">
@@ -151,6 +175,7 @@ function TrailerRepair() {
         </div>
       </div>
     </main>
+    </>
   )
 }
 

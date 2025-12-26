@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',  # CORS support
     'emails',
+    'seo',
 ]
 
 MIDDLEWARE = [
@@ -154,3 +155,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# SEO Configuration
+# Frontend URL where the React app is served (for sitemap URLs)
+FRONTEND_URL = 'https://mechanicsitedemo-1.onrender.com'
