@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { api } from '../api'
 
 // Vehicle makes and models data
@@ -111,8 +112,30 @@ function MobileService() {
     }
   }
 
+  const baseUrl = 'https://mechanicsitedemo-1.onrender.com'
+  const pageUrl = `${baseUrl}/request-24/7-emergency-service---towing`
+  
   return (
-    <main className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white min-h-[calc(100vh-200px)]">
+    <>
+      <Helmet>
+        <title>Mobile Service & 24/7 Emergency Towing | Summit Diesel Repair</title>
+        <meta name="description" content="24/7 mobile diesel service and emergency towing. Request on-site repairs for trucks, trailers, and commercial vehicles. Fast response times." />
+        <link rel="canonical" href={pageUrl} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Mobile Service & 24/7 Emergency Towing | Summit Diesel Repair" />
+        <meta property="og:description" content="24/7 mobile diesel service and emergency towing. Request on-site repairs for trucks, trailers, and commercial vehicles." />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${baseUrl}/logo.png`} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Mobile Service & 24/7 Emergency Towing | Summit Diesel Repair" />
+        <meta name="twitter:description" content="24/7 mobile diesel service and emergency towing. Request on-site repairs for trucks and commercial vehicles." />
+        <meta name="twitter:image" content={`${baseUrl}/logo.png`} />
+      </Helmet>
+      <main className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white min-h-[calc(100vh-200px)]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold text-black mb-6 uppercase tracking-wider">
@@ -441,6 +464,7 @@ function MobileService() {
         </div>
       </div>
     </main>
+    </>
   )
 }
 

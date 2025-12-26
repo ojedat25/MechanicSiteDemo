@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { api } from '../api'
 
 const US_STATES = [
@@ -106,8 +107,79 @@ function Home() {
     }
   }
 
+  const baseUrl = 'https://mechanicsitedemo-1.onrender.com'
+  
   return (
-    <main className="flex-1 bg-gradient-to-b from-gray-50 to-white">
+    <>
+      <Helmet>
+        <title>Summit Diesel Repair | 24/7 Emergency Services & Repair</title>
+        <meta name="description" content="Professional diesel repair services, 24/7 emergency towing, mobile service, and trailer repair. Trusted diesel mechanics serving your area." />
+        <link rel="canonical" href={`${baseUrl}/`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Summit Diesel Repair | 24/7 Emergency Services & Repair" />
+        <meta property="og:description" content="Professional diesel repair services, 24/7 emergency towing, mobile service, and trailer repair. Trusted diesel mechanics serving your area." />
+        <meta property="og:url" content={`${baseUrl}/`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${baseUrl}/logo.png`} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Summit Diesel Repair | 24/7 Emergency Services & Repair" />
+        <meta name="twitter:description" content="Professional diesel repair services, 24/7 emergency towing, mobile service, and trailer repair." />
+        <meta name="twitter:image" content={`${baseUrl}/logo.png`} />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AutoRepair",
+            "name": "Summit Diesel Repair",
+            "description": "Professional diesel repair services, 24/7 emergency towing, mobile service, and trailer repair",
+            "url": baseUrl,
+            "telephone": "763-777-2135",
+            "priceRange": "$$",
+            "openingHours": "Mo-Su 00:00-23:59",
+            "serviceArea": {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates"
+              }
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Diesel Repair Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "24/7 Emergency Towing",
+                    "description": "24/7 emergency towing services"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Mobile Service",
+                    "description": "On-site mobile diesel repair service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Trailer Repair",
+                    "description": "Professional trailer repair services"
+                  }
+                }
+              ]
+            }
+          })}
+        </script>
+      </Helmet>
+      <main className="flex-1 bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center min-h-[60vh] relative">
         {/* Background Image - positioned relative to viewport */}
@@ -335,6 +407,7 @@ function Home() {
         </div>
       </section>
     </main>
+    </>
   )
 }
 
