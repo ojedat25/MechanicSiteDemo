@@ -242,7 +242,7 @@ function Home() {
               <div className="relative z-10 text-center w-fit px-4 -mt-20">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black uppercase tracking-widest mb-4">24/7 EMERGENCY SERVICES</h2>
                 <hr className="w-24 h-1 bg-wine-red border-0 mx-auto" />
-                <h3 className="text-xl sm:text-3xl text-gray-700 my-6 font-normal tracking-wide drop-shadow-md inline-block px-3 py-3 bg-white/90 rounded-lg shadow-md">
+                <h3 className="text-base sm:text-xl md:text-3xl text-gray-700 my-6 font-normal tracking-wide drop-shadow-md inline-block px-3 py-3 bg-white/90 rounded-lg shadow-md whitespace-nowrap">
                   Parts • Service • Towing
                 </h3>
                 <div className="mt-6">
